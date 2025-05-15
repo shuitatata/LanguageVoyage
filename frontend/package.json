@@ -1,0 +1,30 @@
+{
+    "name": "language-voyage",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    },
+    "dependencies": {
+        "vue": "^3.4.15",
+        "vue-router": "^4.2.5",
+        "pinia": "^2.1.7",
+        "element-plus": "^2.5.3",
+        "axios": "^1.6.7"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.3",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.12",
+        "vue-tsc": "^1.8.27",
+        "@typescript-eslint/parser": "^6.21.0",
+        "@typescript-eslint/eslint-plugin": "^6.21.0",
+        "eslint": "^8.56.0",
+        "eslint-plugin-vue": "^9.21.1",
+        "sass": "^1.70.0"
+    }
+}
