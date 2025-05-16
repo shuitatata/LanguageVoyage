@@ -35,12 +35,8 @@ class ChatService:
         ).order_by(ChatMessage.created_at).all()
         return messages
 
-<<<<<<< HEAD
+
     async def process_message(self, db: Session, message: ChatMessageCreate) -> ChatMessage:
-=======
-    @staticmethod
-    def process_message(db: Session, message: ChatMessageCreate) -> ChatMessage:
->>>>>>> 6a0bd4e (feat: 完成基础对话功能和数据库配置)
         """处理新消息"""
         # 创建用户消息
         user_message = ChatMessage(
@@ -50,7 +46,6 @@ class ChatService:
         )
         db.add(user_message)
         
-<<<<<<< HEAD
         # 获取场景信息
         session = db.query(ChatSession).filter(
             ChatSession.session_id == message.session_id
@@ -86,10 +81,6 @@ class ChatService:
         )
         
         # 保存助手回复
-=======
-        # TODO: 调用 LLM 生成回复
-        assistant_response = "这是一个模拟的助手回复"
->>>>>>> 6a0bd4e (feat: 完成基础对话功能和数据库配置)
         assistant_message = ChatMessage(
             content=assistant_response,
             session_id=message.session_id,

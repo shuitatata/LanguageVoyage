@@ -12,10 +12,7 @@ from ..services.chat import ChatService
 from ..db.database import get_db
 
 router = APIRouter()
-<<<<<<< HEAD
 chat_service = ChatService()  # 创建ChatService实例
-=======
->>>>>>> 6a0bd4e (feat: 完成基础对话功能和数据库配置)
 
 @router.post("/sessions", response_model=ChatSessionResponse)
 def create_chat_session(
