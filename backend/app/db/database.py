@@ -20,4 +20,8 @@ def get_db():
     try:
         yield db
     finally:
-        db.close() 
+        db.close()
+
+# 创建所有表
+def create_tables():
+    Base.metadata.create_all(bind=engine) 
