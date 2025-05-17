@@ -60,7 +60,7 @@ class ChatService:
         # 获取历史消息
         history = self.get_chat_history(db, message.session_id)
         messages = [Message(role=msg.role, content=msg.content) for msg in history]
-        messages.append(user_message)
+        messages.append(Message(role=user_message.role, content=user_message.content))
         
         # 创建系统提示词
         scene_info = {
