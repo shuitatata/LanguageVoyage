@@ -3,6 +3,10 @@ from pydantic import BaseModel
 from openai import AsyncOpenAI
 from ..core.config import settings
 
+class LLMServiceError(Exception):
+    """LLM 服务调用异常"""
+    pass
+
 class Message(BaseModel):
     role: str
     content: str
@@ -61,7 +65,7 @@ class LLMService:
             return response.choices[0].message.content
         except Exception as e:
             # TODO: 添加更详细的错误处理
-            raise Exception(f"调用LLM API时发生错误: {str(e)}")
+            raise LLMServiceError(f"调用LLM API时发生错误: {str(e)}") from e
 
     @staticmethod
     def create_system_prompt(scene_info: Dict) -> str:
