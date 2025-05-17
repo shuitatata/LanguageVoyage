@@ -18,8 +18,7 @@ class Scene(Base):
     npc_description = Column(Text)  # NPC角色描述
     difficulty = Column(Enum(DifficultyLevel))  # 难度级别
     tasks = Column(Text)  # 任务列表（JSON格式）
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    tasks_info = Column(Text)  # 任务信息，包含答案（JSON格式）
 
 class ChatSession(Base):
     __tablename__ = "chat_sessions"

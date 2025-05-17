@@ -67,7 +67,9 @@ class ChatService:
             "language": scene.language,
             "npc_role": scene.npc_role,
             "npc_description": scene.npc_description,
-            "difficulty": scene.difficulty.value
+            "difficulty": scene.difficulty.value,
+            "tasks": scene.tasks,
+            "tasks_info": scene.tasks_info
         }
         system_prompt = self.llm_service.create_system_prompt(scene_info)
         
